@@ -1,0 +1,55 @@
+.navItem {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  transition: ease all 0.3s;
+
+  &.active {
+    border-bottom-color: theme("colors.brand.color");
+    background-color: theme("colors.adaptive.white.2");
+    * {
+      color: theme("colors.brand.color");
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    right: 0;
+    width: 0%;
+    opacity: 0.2;
+    background-color: theme("colors.brand.color");
+    height: 2px;
+    transition: ease all 0.5s;
+  }
+
+  &:hover::after {
+    left: 0;
+    width: 100%;
+    opacity: 1;
+    transition: ease all 0.2s;
+  }
+
+  &:hover {
+    background-color: theme("colors.adaptive.white.2");
+    cursor: pointer;
+
+    * {
+      color: theme("colors.brand.color");
+    }
+
+    .sub_nav {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  a {
+    color: theme("colors.primary.color");
+
+    &:hover {
+      color: theme("colors.brand.color");
+    }
+  }
+}

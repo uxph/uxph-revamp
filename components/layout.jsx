@@ -1,14 +1,13 @@
-import Footer from "./Footer/Footer"
-
+import Footer from "./Footer/Footer";
+import Navbar from "./Navbar/Navbar";
 const Layout = ({ children }) => {
   return (
     <>
-      {/* nav */}
+      <Navbar />
       <main>{children}</main>
       <Footer />
-      {/* footer */}
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

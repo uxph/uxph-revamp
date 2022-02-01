@@ -1,0 +1,83 @@
+[
+  {
+    "label": "Home",
+    "url": "/",
+    "subLabel": null,
+    "icon": null
+  },
+  {
+    "label": "About",
+    "url": null,
+    "subLabel": null,
+    "icon": null,
+    "direction": "left",
+    "subNav": [
+      {
+        "label": "About UXPH",
+        "url": "/about",
+        "subLabel": "Learn more about the largest UX Design community in the Philippines."
+      },
+      {
+        "label": "Organizing Members",
+        "url": "/organizing-members",
+        "subLabel": "Get to know the amazing people behind the scenes!"
+      }
+    ]
+  },
+  {
+    "label": "Events",
+    "url": "/events",
+    "subLabel": null,
+    "icon": null
+  },
+  {
+    "label": "Get involved",
+    "url": null,
+    "subLabel": null,
+    "icon": null,
+    "direction": "left",
+    "subNav": [
+      {
+        "label": "Be a volunteer",
+        "url": "/volunteers",
+        "subLabel": "Volunteer with us and be part of the community!"
+      },
+      {
+        "label": "Be a partner",
+        "url": "/sponsorships",
+        "subLabel": "Explore all sorts of interesting partnership opportunities with us!"
+      }
+    ]
+  },
+  {
+    "label": "Blog",
+    "url": "/blog",
+    "subLabel": null,
+    "icon": null
+  },
+  {
+    "label": "Research",
+    "url": null,
+    "subLabel": null,
+    "icon": null,
+    "direction": "right",
+    "subNav": [
+      {
+        "label": "UXPH Research",
+        "url": "/",
+        "subLabel": "Browse through our studies about understanding the UX Design landscape within the Philippines."
+      },
+      {
+        "label": "Research Team",
+        "url": "/",
+        "subLabel": "Learn more about our research objectives and the team behind it."
+      }
+    ]
+  },
+  {
+    "label": "FAQ",
+    "url": "/faq",
+    "subLabel": null,
+    "icon": null
+  }
+]

@@ -17,9 +17,9 @@ module.exports = {
           shadowColor: "#E0E8F1",
         },
         brand: {
-          color: "#0F7AFF",
-          activeColor: "#005FD3",
-          shadowColor: "#B9D8FF",
+          color: "#15b0de",
+          activeColor: "#007bbf",
+          shadowColor: "#b5ebfc",
         },
         danger: {
           color: "#DD2134",
@@ -30,6 +30,13 @@ module.exports = {
           color: "#28A745",
           activeColor: "#148B30",
           shadowColor: "#B0E9BD",
+        },
+        adaptive: {
+          dark: {
+            1: "#10171D",
+            2: "#21272D",
+            3: "#182336",
+          },
         },
       },
       fontSize: {

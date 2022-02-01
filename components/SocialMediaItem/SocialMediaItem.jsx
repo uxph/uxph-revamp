@@ -6,6 +6,7 @@ import {
   FaTwitter,
   FaEnvelope,
 } from "react-icons/fa";
+
 const SocialMediaItem = ({ icon, name, url, urlLabel }) => {
   const icons = {
     facebook: <FaFacebookSquare />,
@@ -18,9 +19,9 @@ const SocialMediaItem = ({ icon, name, url, urlLabel }) => {
     <div className="flex items-start">
       <div className="mr-3 text-2xl">{icons[icon]}</div>
       <div>
-        <p className="font-bold">{name}:</p>
+        <h5>{name}:</h5>
         <Link href={url}>
-          <a>{urlLabel}</a>
+          <a className="text-brand-color hover:underline">{urlLabel}</a>
         </Link>
       </div>
     </div>

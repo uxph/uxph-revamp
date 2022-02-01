@@ -5,7 +5,7 @@ import socials from "../../data/social-media.json";
 import SocialMediaItem from "../SocialMediaItem/SocialMediaItem";
 const Footer = () => {
   return (
-    <footer className="bg-primary-color text-white">
+    <footer className="bg-adaptive-dark-3 text-white">
       <div className="container mx-auto py-10">
         <div className="flex">
           <div className="mr-12">
@@ -19,7 +19,9 @@ const Footer = () => {
             </div>
             <p className="mt-5">&copy; Copyright 2022.</p>
             <Link href="/">
-              <a>View Code of Conduct</a>
+              <a className="text-brand-color transition-all hover:text-brand-activeColor">
+                View Code of Conduct
+              </a>
             </Link>
           </div>
           <div>

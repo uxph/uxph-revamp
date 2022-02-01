@@ -27,9 +27,10 @@ const Footer = () => {
           <div>
             <h2 className="mb-8">Connect with us</h2>
             <div className="grid grid-cols-3 grid-rows-2 gap-x-24 gap-y-7 ">
-              {socials.map(({ icon, name, url, urlLabel }) => {
+              {socials.map(({ icon, name, url, urlLabel }, index) => {
                 return (
                   <SocialMediaItem
+                    key={index}
                     icon={icon}
                     name={name}
                     url={url}

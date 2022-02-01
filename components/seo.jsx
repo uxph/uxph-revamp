@@ -1,6 +1,6 @@
-import Head from "next/head";
+import Head from "next/head"
 
-const SEO = ({ title, desc }) => {
+const SEO = ({ title = "", desc = "" }) => {
   return (
     <Head>
       <title> {title} | UX PHilippines</title>
@@ -8,7 +8,7 @@ const SEO = ({ title, desc }) => {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="icon" href="/images/uxsoc-logo.png" />
     </Head>
-  );
-};
+  )
+}
 
-export default SEO;
+export default SEO

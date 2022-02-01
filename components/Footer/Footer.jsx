@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="container mx-auto py-10">
         <div className="flex">
           <div className="mr-12">
-            <div className={`${styles.logo} relative h-auto w-full `}>
+            <div className={`${styles.logo} relative`}>
               <Image
                 src="/images/brand/uxph_logo.svg"
                 alt="UXPH Logo"

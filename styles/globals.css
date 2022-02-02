@@ -28,7 +28,8 @@ h4,
 h5,
 h6,
 p,
-a {
+a,
+span {
   font-family: "Inter", sans-serif;
 }
 
@@ -59,5 +60,5 @@ h4 {
 
 p,
 a {
-  font-size: theme("fontSize.body");
+  font-size: theme("fontSize.base");
 }

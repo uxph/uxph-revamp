@@ -6,8 +6,8 @@ import SocialMediaItem from "../SocialMediaItem/SocialMediaItem";
 const Footer = () => {
   return (
     <footer className="bg-adaptive-dark-3 text-white">
-      <div className="container mx-auto py-10">
-        <div className="flex">
+      <div className="container mx-auto py-10 px-5 lg:px-0">
+        <div className="flex flex-col lg:flex-row">
           <div className="mr-12">
             <div className={`${styles.logo} relative`}>
               <Image
@@ -25,8 +25,8 @@ const Footer = () => {
             </Link>
           </div>
           <div>
-            <h2 className="mb-8">Connect with us</h2>
-            <div className="grid grid-cols-3 grid-rows-2 gap-x-24 gap-y-7 ">
+            <h2 className="mb-8 mt-8 lg:mt-0">Connect with us</h2>
+            <div className="grid grid-cols-1  gap-x-24 gap-y-7 lg:grid-cols-3 lg:grid-rows-2 ">
               {socials.map(({ icon, name, url, urlLabel }, index) => {
                 return (
                   <SocialMediaItem

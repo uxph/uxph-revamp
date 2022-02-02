@@ -5,9 +5,14 @@ const NavItem = ({ nav, active }) => {
 
   return (
     <li className={styles.navItem}>
-      <Link href={url != null ? url : "/"}>
-        <a className="block px-5 py-5"> {label} </a>
-      </Link>
+      {url != null ? (
+        <Link href={url}>
+          <a className="block px-5 py-5"> {label} </a>
+        </Link>
+      ) : (
+        <span className="block px-5 py-5"> {label} </span>
+      )}
+
       {subNav && (
         <div
           className={styles.subNav}

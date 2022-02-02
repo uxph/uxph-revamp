@@ -45,7 +45,8 @@
       opacity: 1;
     }
   }
-  a {
+  a,
+  span {
     color: theme("colors.primary.color");
 
     &:hover {

@@ -28,7 +28,8 @@ h4,
 h5,
 h6,
 p,
-a {
+a,
+span {
   font-family: "Inter", sans-serif;
 }
 

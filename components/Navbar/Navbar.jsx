@@ -19,6 +19,9 @@ const Navbar = ({ active }) => {
               onClick={() => {
                 setShowNav(true);
               }}
+              aria-expanded={showNav}
+              aria-controls="mobileNav"
+              aria-label="Toggle Mobile Navigation"
             >
               <GiHamburgerMenu />
             </button>
@@ -43,6 +46,7 @@ const Navbar = ({ active }) => {
           </div>
         </div>
         <div
+          id="mobileNav"
           className={`${
             showNav ? "left-0" : "-left-full"
           } absolute top-0 flex h-screen w-full flex-col overflow-scroll bg-adaptive-dark-3 transition-all duration-500`}

@@ -1,10 +1,10 @@
 import Link from "next/link";
 import styles from "./NavItem.module.scss";
-const NavItem = ({ nav, active }) => {
+const NavItem = ({ nav, active, navStyle }) => {
   const { label, url, subNav, direction } = nav;
 
   return (
-    <li className={styles.navItem}>
+    <li className={styles.navItem} data-style={navStyle}>
       {url != null ? (
         <Link href={url}>
           <a className="block px-5 py-5"> {label} </a>
@@ -21,7 +21,7 @@ const NavItem = ({ nav, active }) => {
             right: direction === "left" ? "auto" : "0",
           }}
         >
-          <div className="overflow-hidden bg-white p-2 shadow-md">
+          <div className="overflow-hidden rounded-lg bg-white p-2 shadow-md">
             {subNav.map((subNavItem, index) => {
               return (
                 <div className="p-4 transition-all hover:bg-adaptive-white-2">

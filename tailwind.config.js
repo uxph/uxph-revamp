@@ -40,7 +40,7 @@ module.exports = {
           white: {
             1: "#fafcff",
             2: "#f6f9fc",
-            3: "e3e9f0",
+            3: "#e3e9f0",
             4: "#d1d5db",
           },
         },

@@ -1,0 +1,60 @@
+// See css variable scopes: https://webkul.com/blog/understanding-the-scope-in-css-variables/
+
+.button {
+  --button-color: theme("colors.brand.color");
+  --button-border-color: var(--button-color);
+  --button-text-color: #ffffff;
+  --button-hover-color: theme("colors.brand.activeColor");
+  --button-hover-border-color: var(--button-hover-color);
+  --border-hover-text-color: var(--button-text-color);
+
+  &.outlined {
+    --button-color: transparent;
+    --button-border-color: theme("colors.brand.color");
+    --button-text-color: var(--button-border-color);
+    --button-hover-color: var(--button-color);
+    --border-hover-border-color: theme("colors.brand.color");
+    --border-hover-text-color: theme("colors.brand.activeColor");
+  }
+
+  &.white {
+    --button-color: #ffffff;
+    --button-text-color: theme("colors.brand.color");
+    --button-border-color: #ffffff;
+    --button-hover-color: theme("colors.adaptive.white.3");
+    --button-hover-border-color: var(--button-hover-color);
+    --button-hover-text-color: var(--button-text-color);
+  }
+
+  &.white-alternative {
+    --button-color: rgba(255, 255, 255, 0.15);
+    --button-text-color: #ffffff;
+    --button-border-color: transparent;
+    --button-hover-color: var(--button-color);
+    --button-hover-border-color: transparent;
+    --button-hover-text-color: var(--button-text-color);
+  }
+
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  border: 2px solid var(--button-border-color);
+  padding: 0.4rem 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: ease all 0.3s;
+  box-shadow: 0px 2px 11px rgba(71, 71, 71, 0.2);
+  font-size: 0.875rem;
+  min-width: 64px;
+  border-radius: 4px;
+  line-height: 1.75;
+  font-weight: 600;
+  transform: scale(1);
+
+  &:hover {
+    background-color: var(--button-hover-color);
+    border-color: var(--button-hover-border-color);
+    color: var(--border-hover-text-color);
+    transform: scale(0.95);
+  }
+}

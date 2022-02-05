@@ -5,20 +5,36 @@ import NavItem from "../NavItem/NavItem";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
 import NavItemMobile from "../NavItem/NavItemMobile";
+import styles from "./Navbar.module.scss";
 
 const Navbar = ({ active }) => {
   const [showNav, setShowNav] = useState(false);
+  const [navStyle, setNavStyle] = useState("primary");
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY;
+      setNavStyle(scrollY > 0 ? "secondary" : "primary");
+    });
+  }, []);
 
   return (
-    <nav className="py-5 shadow-md md:py-0">
+    <nav
+      id={styles.navBar}
+      className="w-full py-5 transition-all duration-300 lg:py-0"
+      data-style={navStyle}
+    >
       <div className="container mx-auto">
         <div className="flex items-center">
           <div className="flex items-center px-5">
             <button
-              className="block text-3xl leading-3 text-adaptive-dark-2 md:hidden"
+              className="block text-3xl leading-3 text-adaptive-dark-2 lg:hidden"
               onClick={() => {
                 setShowNav(true);
               }}
+              aria-expanded={showNav}
+              aria-controls="mobileNav"
+              aria-label="Toggle Mobile Navigation"
             >
               <GiHamburgerMenu />
             </button>
@@ -34,15 +50,23 @@ const Navbar = ({ active }) => {
               />
             </div>
           </div>
-          <div className="ml-auto hidden md:block">
+          <div className="ml-auto hidden lg:block">
             <ul>
               {navItems.map((navItem, index) => {
-                return <NavItem key={index} nav={navItem} active={active} />;
+                return (
+                  <NavItem
+                    key={index}
+                    nav={navItem}
+                    active={active}
+                    navStyle={navStyle}
+                  />
+                );
               })}
             </ul>
           </div>
         </div>
         <div
+          id="mobileNav"
           className={`${
             showNav ? "left-0" : "-left-full"
           } absolute top-0 flex h-screen w-full flex-col overflow-scroll bg-adaptive-dark-3 transition-all duration-500`}

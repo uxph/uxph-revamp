@@ -1,0 +1,14 @@
+#navBar[data-style="primary"] {
+  position: absolute;
+  top: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: none;
+}
+
+#navBar[data-style="secondary"] {
+  position: fixed;
+  top: 0;
+  background-color: #ffffff;
+  z-index: 10;
+  box-shadow: 0px 2px 11px theme("colors.adaptive.dark.3");
+}

@@ -1,10 +1,10 @@
 import Link from "next/link";
 import styles from "./NavItem.module.scss";
-const NavItem = ({ nav, active }) => {
+const NavItem = ({ nav, active, navStyle }) => {
   const { label, url, subNav, direction } = nav;
 
   return (
-    <li className={styles.navItem}>
+    <li className={styles.navItem} data-style={navStyle}>
       {url != null ? (
         <Link href={url}>
           <a className="block px-5 py-5"> {label} </a>

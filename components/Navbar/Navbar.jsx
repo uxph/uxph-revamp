@@ -5,12 +5,25 @@ import NavItem from "../NavItem/NavItem";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
 import NavItemMobile from "../NavItem/NavItemMobile";
+import styles from "./Navbar.module.scss";
 
 const Navbar = ({ active }) => {
   const [showNav, setShowNav] = useState(false);
+  const [navStyle, setNavStyle] = useState("primary");
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY;
+      setNavStyle(scrollY > 0 ? "secondary" : "primary");
+    });
+  }, []);
 
   return (
-    <nav className="py-5 shadow-lg lg:py-0">
+    <nav
+      id={styles.navBar}
+      className="w-full py-5 transition-all duration-300 lg:py-0"
+      data-style={navStyle}
+    >
       <div className="container mx-auto">
         <div className="flex items-center">
           <div className="flex items-center px-5">
@@ -40,7 +53,14 @@ const Navbar = ({ active }) => {
           <div className="ml-auto hidden lg:block">
             <ul>
               {navItems.map((navItem, index) => {
-                return <NavItem key={index} nav={navItem} active={active} />;
+                return (
+                  <NavItem
+                    key={index}
+                    nav={navItem}
+                    active={active}
+                    navStyle={navStyle}
+                  />
+                );
               })}
             </ul>
           </div>

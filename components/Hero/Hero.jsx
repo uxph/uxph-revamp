@@ -6,7 +6,7 @@ const Hero = ({ imageUrl, headingText, content }) => {
       style={{
         background: "linear-gradient(180deg, #1D3450 0%, #1F4F8A 100%)",
       }}
-      className="flex flex-auto flex-col items-center justify-end py-16 text-white md:flex-row"
+      className="flex flex-auto flex-col items-center justify-end py-36 text-white md:flex-row"
     >
       <div className="w-11/12 md:mx-14 md:w-full">
         <h1>{headingText}</h1>

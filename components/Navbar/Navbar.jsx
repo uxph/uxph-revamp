@@ -10,12 +10,12 @@ const Navbar = ({ active }) => {
   const [showNav, setShowNav] = useState(false);
 
   return (
-    <nav className="py-5 shadow-md md:py-0">
+    <nav className="py-5 shadow-lg lg:py-0">
       <div className="container mx-auto">
         <div className="flex items-center">
           <div className="flex items-center px-5">
             <button
-              className="block text-3xl leading-3 text-adaptive-dark-2 md:hidden"
+              className="block text-3xl leading-3 text-adaptive-dark-2 lg:hidden"
               onClick={() => {
                 setShowNav(true);
               }}
@@ -37,7 +37,7 @@ const Navbar = ({ active }) => {
               />
             </div>
           </div>
-          <div className="ml-auto hidden md:block">
+          <div className="ml-auto hidden lg:block">
             <ul>
               {navItems.map((navItem, index) => {
                 return <NavItem key={index} nav={navItem} active={active} />;

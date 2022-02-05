@@ -21,7 +21,7 @@ const NavItem = ({ nav, active }) => {
             right: direction === "left" ? "auto" : "0",
           }}
         >
-          <div className="overflow-hidden bg-white p-2 shadow-md">
+          <div className="overflow-hidden rounded-lg bg-white p-2 shadow-md">
             {subNav.map((subNavItem, index) => {
               return (
                 <div className="p-4 transition-all hover:bg-adaptive-white-2">

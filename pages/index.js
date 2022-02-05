@@ -15,7 +15,7 @@ export default function Home() {
         headingText="UX Philippines"
         content={
           <>
-            <p className="leading-8">
+            <p className="mb-5 leading-8">
               <b>
                 Welcome to the Philippines' largest community of individuals
                 passionate about the realm of UX (User Experience), and all
@@ -25,7 +25,10 @@ export default function Home() {
               a wide range of industries related to technology and even
               traditional businesses.
             </p>
-            <Button>Learn More</Button>
+            <Button variant="white" className="mr-5">
+              Learn More
+            </Button>
+            <Button variant="white-alternative">Join our Facebook group</Button>
           </>
         }
       />

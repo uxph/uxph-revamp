@@ -40,6 +40,8 @@
   border: 2px solid var(--button-border-color);
   padding: 0.4rem 1.5rem;
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition: ease all 0.3s;
   box-shadow: 0px 2px 11px rgba(71, 71, 71, 0.2);
   font-size: 0.875rem;

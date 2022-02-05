@@ -25,10 +25,14 @@ export default function Home() {
               a wide range of industries related to technology and even
               traditional businesses.
             </p>
-            <Button variant="white" className="mr-5">
-              Learn More
-            </Button>
-            <Button variant="white-alternative">Join our Facebook group</Button>
+            <div className="flex flex-col lg:flex-row">
+              <Button variant="white" className="mb-5 lg:mb-0 lg:mr-5">
+                Learn More
+              </Button>
+              <Button variant="white-alternative">
+                Join our Facebook group
+              </Button>
+            </div>
           </>
         }
       />

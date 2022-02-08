@@ -1,6 +1,11 @@
 import Link from "next/link";
 import styles from "./Button.module.scss";
-const Button = ({ children, href = "/", variant = "", className = "" }) => {
+const Button = ({
+  children,
+  href = "/",
+  variant = "default",
+  className = "",
+}) => {
   return (
     <Link href={href}>
       <a className={`${styles.button} ${styles[variant]} ${className}`}>

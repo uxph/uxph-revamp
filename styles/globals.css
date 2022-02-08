@@ -29,7 +29,8 @@ h5,
 h6,
 p,
 a,
-span {
+span,
+li {
   font-family: "Inter", sans-serif;
 }
 
@@ -61,4 +62,8 @@ h4 {
 p,
 a {
   font-size: theme("fontSize.base");
+}
+
+p {
+  line-height: 32px;
 }

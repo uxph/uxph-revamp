@@ -1,12 +1,14 @@
 // See css variable scopes: https://webkul.com/blog/understanding-the-scope-in-css-variables/
 
 .button {
-  --button-color: theme("colors.brand.color");
-  --button-border-color: var(--button-color);
-  --button-text-color: #ffffff;
-  --button-hover-color: theme("colors.brand.activeColor");
-  --button-hover-border-color: var(--button-hover-color);
-  --border-hover-text-color: var(--button-text-color);
+  &.default {
+    --button-color: theme("colors.brand.color");
+    --button-border-color: var(--button-color);
+    --button-text-color: #ffffff;
+    --button-hover-color: theme("colors.brand.activeColor");
+    --button-hover-border-color: var(--button-hover-color);
+    --border-hover-text-color: var(--button-text-color);
+  }
 
   &.outlined {
     --button-color: transparent;

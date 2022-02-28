@@ -24,7 +24,7 @@ const NavItem = ({ nav, active, navStyle }) => {
           <div className="overflow-hidden rounded-lg bg-white p-2 shadow-md">
             {subNav.map((subNavItem, index) => {
               return (
-                <div className="p-4 transition-all hover:bg-adaptive-white-2">
+                <div className="p-4 transition-all hover:bg-adaptive-white-2" key={index}>
                   <Link href={subNavItem.url != null ? subNavItem.url : "/"}>
                     <a>
                       <p className="mb-1 font-semibold text-primary-color">

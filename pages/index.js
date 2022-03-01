@@ -54,8 +54,8 @@ export default function Home() {
             enthusiast, we're happy to have you join us!
           </p>
           <ul className="mb-7">
-            {volunteerPerks.map((perk) => (
-              <li className="mb-3 flex items-center gap-4">
+            {volunteerPerks.map((perk, index) => (
+              <li className="mb-3 flex items-center gap-4" key={index}>
                 <Image
                   src={"/images/home/check-icon.png"}
                   alt="Image"

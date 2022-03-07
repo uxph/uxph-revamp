@@ -5,7 +5,7 @@ import Layout from "./../components/layout";
 import Hero from "../components/Hero/Hero";
 import Button from "./../components/Button/Button";
 import EventItem from "./../components/EventItem/EventItem";
-
+import { eventFilter } from "../utils/notion-filters";
 const Events = ({ events }) => {
   return (
     <Layout>
@@ -63,8 +63,8 @@ export default Events;
 export async function getServerSideProps() {
   const { results } = await notion.databases.query({
     database_id: process.env.NOTION_EVENTS_DATABASE,
+    ...eventFilter,
   });
-
   const events = results.map((result) => result.properties);
   return {
     props: { events },

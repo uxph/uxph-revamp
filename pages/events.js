@@ -11,7 +11,7 @@ const Events = ({ events }) => {
     <Layout>
       <SEO title="Events" />
       <Hero
-        imageUrl="/images/home/hero-collage.png"
+        imageUrl="/images/home/community-partner.png"
         headingText="UX Philippines"
         content={
           <>
@@ -60,7 +60,7 @@ const Events = ({ events }) => {
 
 export default Events;
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const { results } = await notion.databases.query({
     database_id: process.env.NOTION_EVENTS_DATABASE,
     ...eventFilter,
@@ -68,5 +68,6 @@ export async function getServerSideProps() {
   const events = results.map((result) => result.properties);
   return {
     props: { events },
+    revalidate: 300,
   };
 }

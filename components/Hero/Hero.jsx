@@ -12,19 +12,23 @@ const Hero = ({ imageUrl, headingText, content }) => {
         <h1>{headingText}</h1>
         {content}
       </div>
-      <div className="mt-16 md:mt-0 md:w-9/12">
-        <div className="relative block">
-          <Image
-            src={imageUrl}
-            alt="Image"
-            // layout="fill"
-            width={800}
-            height={700}
-            objectFit="contain"
-            objectPosition="right"
-          />
+      {imageUrl ? (
+        <div className="mt-16 md:mt-0 md:w-9/12">
+          <div className="relative block">
+            <Image
+              src={imageUrl}
+              alt="Image"
+              // layout="fill"
+              width={800}
+              height={700}
+              objectFit="contain"
+              objectPosition="right"
+            />
+          </div>
         </div>
-      </div>
+      ) : (
+        ""
+      )}
     </section>
   );
 };

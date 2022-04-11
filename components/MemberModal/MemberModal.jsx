@@ -1,11 +1,21 @@
 import Image from "next/image";
 
-const MemberModal = ({ member }) => {
+const MemberModal = ({ member, closeModal }) => {
   const { image, name, team } = member;
 
   if (member) {
     return (
-      <div className="absolute top-1/4 left-1/4 z-10 flex w-1/2 rounded-md bg-white p-12 shadow-sm">
+      <div className="fixed top-1/4 left-1/4 z-20  w-1/2 rounded-md bg-white p-12 shadow-sm">
+        <div className="text-right">
+          <button
+            className="text-h3"
+            onClick={() => {
+              closeModal();
+            }}
+          >
+            &#10006;
+          </button>
+        </div>
         <div className="flex items-start gap-4">
           <div className="relative w-64" style={{ height: "110px" }}>
             <Image

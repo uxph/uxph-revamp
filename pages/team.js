@@ -8,6 +8,7 @@ import MemberModal from "./../components/MemberModal/MemberModal";
 import Overlay from "./../components/Overlay/Overlay";
 
 const Team = ({ advisors, volunteers, leads }) => {
+  // TODO: refactor modal implementation
   const [modal, setModal] = useState(false);
 
   const openModal = (member) => {

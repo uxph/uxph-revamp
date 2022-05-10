@@ -7,15 +7,19 @@ import { FaTimes } from "react-icons/fa";
 import NavItemMobile from "../NavItem/NavItemMobile";
 import styles from "./Navbar.module.scss";
 
-const Navbar = ({ active }) => {
+const Navbar = ({ active, animateNav }) => {
   const [showNav, setShowNav] = useState(false);
-  const [navStyle, setNavStyle] = useState("primary");
+  const [navStyle, setNavStyle] = useState(
+    animateNav ? "primary" : "secondary"
+  );
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      const scrollY = window.scrollY;
-      setNavStyle(scrollY > 0 ? "secondary" : "primary");
-    });
+    if (animateNav) {
+      window.addEventListener("scroll", () => {
+        const scrollY = window.scrollY;
+        setNavStyle(scrollY > 0 ? "secondary" : "primary");
+      });
+    }
   }, []);
 
   return (

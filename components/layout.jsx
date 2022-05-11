@@ -1,9 +1,9 @@
 import Footer from "./Footer/Footer";
 import Navbar from "./Navbar/Navbar";
-const Layout = ({ children }) => {
+const Layout = ({ children, animateNav = true }) => {
   return (
     <>
-      <Navbar />
+      <Navbar animateNav={animateNav} />
       <main>{children}</main>
       <Footer />
     </>

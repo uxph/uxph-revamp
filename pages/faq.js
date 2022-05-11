@@ -4,10 +4,9 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import notion from "../utils/notion";
 import FaqItem from "../components/FaqItem/FaqItem";
-import styles from "../styles/Faq.module.scss";
 import classNames from "classnames";
 
-import { Tabs, Tab, Grid, makeStyles, withStyles } from "@material-ui/core";
+import { Tabs, Tab, Grid, makeStyles } from "@material-ui/core";
 import { useMediaQuery } from "react-responsive";
 
 const useStyleTabs = makeStyles({
@@ -16,12 +15,6 @@ const useStyleTabs = makeStyles({
   },
   tabsRoot: {
     textAlign: "left !important",
-  },
-});
-const useStyleTab = makeStyles({
-  root: {
-    textTransform: "none",
-    textAlign: "right",
   },
 });
 
@@ -97,7 +90,7 @@ const Faq = ({ categories, items }) => {
 };
 
 export async function getServerSideProps() {
-  const { results } = await notion.databases.query({
+  let { results } = await notion.databases.query({
     database_id: process.env.NOTION_FAQ_DATABASE,
     sorts: [
       {
@@ -111,11 +104,12 @@ export async function getServerSideProps() {
     "All Topics",
     ...new Set(results.map((result) => result.properties.Category.select.name)),
   ];
+
   const items = results.map((result) => {
     return {
       question: result.properties.Question.title[0].text.content,
       category: result.properties.Category.select.name,
-      answer: result.properties.Answer.rich_text.map((txt) => txt.text.content),
+      answer: result.properties.Answer.rich_text,
     };
   });
 

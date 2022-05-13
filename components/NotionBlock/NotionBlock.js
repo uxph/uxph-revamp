@@ -1,11 +1,12 @@
 import NotionRichText from "../NotionRichText/NotionRichText";
 import Image from "next/image";
 const NotionBlock = ({ object }) => {
+  const objectHeading = object.heading_2?.text || object.heading_2?.rich_text;
   switch (object.type) {
     case "heading_2":
       return (
         <h2 className="pt-8 pb-2 text-xl sm:text-2xl lg:text-3xl">
-          {object.heading_2.text[0].text.content}
+          {objectHeading[0].text.content}
         </h2>
       );
     case "image":
@@ -23,7 +24,8 @@ const NotionBlock = ({ object }) => {
       );
 
     case "paragraph":
-      let paragraphs = object.paragraph.text || [];
+      let paragraphs =
+        object.paragraph.text || object.paragraph.rich_text || [];
       if (!paragraphs.length) return <br />;
       return (
         <>

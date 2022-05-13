@@ -8,8 +8,11 @@ import readingTime from "reading-time";
 const BlogPost = ({ properties, blocks }) => {
   const text = blocks
     .map((block) => {
-      if (block.type === "paragraph")
-        return block.paragraph.text.map((rt) => rt.text.content).join(" ");
+      if (block.type === "paragraph") {
+        const blockParagraph =
+          block.paragraph?.text || block.paragraph?.rich_text;
+        return blockParagraph.map((rt) => rt.text.content).join(" ");
+      }
       return " ";
     })
     .join();

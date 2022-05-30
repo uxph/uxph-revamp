@@ -1,31 +1,23 @@
 import Image from "next/image";
 
-const MemberModal = ({ member, closeModal }) => {
+const MemberModal = ({ member }) => {
   const { image, name, team } = member;
 
   if (member) {
     return (
-      <div className="fixed top-1/4 left-1/4 z-20  w-1/2 rounded-md bg-white p-12 shadow-sm">
-        <div className="text-right">
-          <button
-            className="text-h3"
-            onClick={() => {
-              closeModal();
-            }}
-          >
-            &#10006;
-          </button>
+      <>
+        <div className="relative flex w-full justify-center overflow-hidden">
+          <Image
+            className=" rounded-full"
+            src={image.files[0].file.url}
+            objectFit="cover"
+            alt={name.title[0].plain_text}
+            width="250px"
+            height="250px"
+            layout="fixed"
+          />
         </div>
         <div className="flex items-start gap-4">
-          <div className="relative w-64" style={{ height: "110px" }}>
-            <Image
-              className="rounded-full"
-              src={image.files[0].file.url}
-              objectFit="cover"
-              alt={name.title[0].plain_text}
-              layout="fill"
-            />
-          </div>
           <div>
             <h3 className="text-primary-color">{name.title[0].plain_text}</h3>
             <p className="text-brand-color">{team.multi_select[0].name}</p>
@@ -38,7 +30,7 @@ const MemberModal = ({ member, closeModal }) => {
             </p>
           </div>
         </div>
-      </div>
+      </>
     );
   }
   return <></>;

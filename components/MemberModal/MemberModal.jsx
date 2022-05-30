@@ -17,18 +17,17 @@ const MemberModal = ({ member }) => {
             layout="fixed"
           />
         </div>
-        <div className="flex items-start gap-4">
-          <div>
-            <h3 className="text-primary-color">{name.title[0].plain_text}</h3>
-            <p className="text-brand-color">{team.multi_select[0].name}</p>
-            <h5>Bio</h5>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-              est, optio earum praesentium cum numquam laborum dolores officia
-              illum quam asperiores quas molestias voluptates? Earum labore
-              numquam esse necessitatibus consequuntur?
-            </p>
-          </div>
+        <div class="text-center">
+          <h3 className="mt-4 mb-2 text-primary-color">
+            {name.title[0].plain_text}
+          </h3>
+          <p className="text-brand-color">{team.multi_select[0].name}</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+            est, optio earum praesentium cum numquam laborum dolores officia
+            illum quam asperiores quas molestias voluptates? Earum labore
+            numquam esse necessitatibus consequuntur?
+          </p>
         </div>
       </>
     );

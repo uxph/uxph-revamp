@@ -27,8 +27,12 @@ const Team = ({ advisors, volunteers, leads }) => {
       </Modal>
       <SEO title="Organizing Members" />
       <Hero headingText="Organizing Members" />
-      <TeamList members={leads} openModal={openModal} />
-      <TeamList members={volunteers} openModal={openModal} />
+      <TeamList heading="Team Leads" members={leads} openModal={openModal} />
+      <TeamList
+        heading="Volunteers"
+        members={volunteers}
+        openModal={openModal}
+      />
     </Layout>
   );
 };

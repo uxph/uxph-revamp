@@ -1,9 +1,7 @@
-import Head from "next/head";
 import Image from "next/image";
 import Hero from "../components/Hero/Hero";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import styles from "../styles/Home.module.css";
 import Button from "./../components/Button/Button";
 
 export default function Home() {
@@ -17,7 +15,7 @@ export default function Home() {
   return (
     <Layout>
       <SEO title="Home" />
-      <Hero imageUrl="">
+      <Hero>
         <div className="w-11/12 md:mx-14 md:w-full">
           <h1>UX Philippines</h1>
           <p className="mb-5">

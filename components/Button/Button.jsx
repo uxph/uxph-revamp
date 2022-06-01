@@ -7,7 +7,7 @@ const Button = ({
   className = "",
 }) => {
   return (
-    <Link href={href}>
+    <Link href={href} >
       <a className={`${styles.button} ${styles[variant]} ${className}`}>
         {children}
       </a>

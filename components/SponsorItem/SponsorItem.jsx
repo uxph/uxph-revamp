@@ -6,18 +6,17 @@ const SponsorItem = ({ sponsor }) => {
   const { image_url, url, name, width } = sponsor;
   console.log(image_url);
   return (
-    <a href={url} target="blank">
-      <Box component="div" className="sponsor_item" borderRadius={8} p={2}>
-        <Image
-          className="sponsor_image"
-          alt={name}
-          //   src="/images/sponsor_logos/cebuxd.png"
-          src={image_url}
-          width={width}
-          height={width}
-        />
-      </Box>
-    </a>
+    <section className=" flex justify-center">
+      <a href={url} target="blank">
+        <div className="h-32 my-4 rounded-full overflow-hidden drop-shadow-lg ease-in-out transition hover:scale-125">
+            <Image 
+                alt={name} 
+                src={image_url} 
+                width="130px" 
+                height="130px"/>
+        </div>
+      </a>
+    </section>
   );
 };
 

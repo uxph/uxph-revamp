@@ -5,9 +5,12 @@ import Image from "next/image";
 import { Container, Box, Grid } from "@material-ui/core";
 import Button from "./../components/Button/Button";
 import PerkItem from "./../components/PerkItem/PerkItem";
-import perks from "../data/volunteer-perks.json";
+import SponsorItem from "../components/SponsorItem/SponsorItem";
+import perks from "../data/sponsorship-perks.json";
+import community_partners from "../data/community_partners.json";
 
 const Sponsorships = ({}) => {
+    console.log(perks)
   return (
     <Layout>
       <SEO title="Sponsorships" />
@@ -44,10 +47,11 @@ const Sponsorships = ({}) => {
       </Hero>
       <section className="flex flex-auto flex-col items-center justify-end py-14 ">
         <div className="w-11/12 md:mx-14 lg:w-1/2 lg:pb-8">
-          <h2 className="text-primary-color">Volunteer Perks</h2>
+          <h2 className="text-primary-color">Sponsorship Perks</h2>
         </div>
         <div className="mt-16 grid w-[90%] grid-cols-1 justify-center gap-11 sm:grid-cols-2 lg:mt-0  lg:w-1/2 lg:pr-14">
           {perks.map(({ img_url, title, content }, index) => (
+            
             <PerkItem
               key={index}
               imageUrl={img_url}
@@ -56,22 +60,18 @@ const Sponsorships = ({}) => {
             />
           ))}
         </div>
-        <Box component="section" py={12}>
-          <Container maxWidth="lg">
-            <h2 className="font-size-32 margin-bottom-64 text-dark text-center">
-              Our Community Partners
-            </h2>
-            <Grid container spacing={4} justify="center">
-              {community_partners.map((sponsor, index) => {
-                return (
-                  <Grid item xs={6} md={3} key={index}>
-                    <SponsorItem sponsor={sponsor} />
-                  </Grid>
-                );
-              })}
-            </Grid>
-          </Container>
-        </Box>
+        <h2 className="my-16 text-center">Our Community Partners</h2>
+
+        <Grid container spacing={2} justifyContent="center">
+          {community_partners.map((sponsor, index) => {
+            console.log(sponsor);
+            return (
+              <Grid item key={index}>
+                <SponsorItem sponsor={sponsor} />
+              </Grid>
+            );
+          })}
+        </Grid>
       </section>
     </Layout>
   );

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const PerkItem = ({ imageUrl, title, content }) => {
   return (
-    <div>
+    <div className="">
       <Image
         src={imageUrl}
         alt="Image"

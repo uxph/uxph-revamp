@@ -5,12 +5,22 @@ const Button = ({
   href = "/",
   variant = "default",
   className = "",
+  isExternal = false,
 }) => {
   return (
     <Link href={href}>
-      <a className={`${styles.button} ${styles[variant]} ${className}`}>
-        {children}
-      </a>
+      {isExternal ? (
+        <a
+          className={`${styles.button} ${styles[variant]} ${className}`}
+          target="_blank"
+        >
+          {children}
+        </a>
+      ) : (
+        <a className={`${styles.button} ${styles[variant]} ${className}`}>
+          {children}
+        </a>
+      )}
     </Link>
   );
 };

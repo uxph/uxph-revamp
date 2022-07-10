@@ -37,7 +37,7 @@ const BlogItem = ({ blog }) => {
           </p>
           <Box component="div" className={styles["blog_author"]}>
             <img
-              src="https://miro.medium.com/max/700/0*B_owcQpugXNQbbVu"
+              src={"/images/brand/uxph_icon.png"}
               alt={author}
               className={styles["profile_photo"]}
             />

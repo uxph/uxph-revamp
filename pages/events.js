@@ -22,7 +22,7 @@ const Events = ({ events }) => {
             Latest Event
           </h1>
           <div className="mx-auto grid h-72 w-full grid-flow-row grid-cols-12  gap-4 rounded-md p-2 md:grid-flow-col lg:w-4/5">
-            <div class="relative col-span-12 h-32 sm:h-72 md:col-span-4 md:h-full">
+            <div className="relative col-span-12 h-32 sm:h-72 md:col-span-4 md:h-full">
               <Image
                 src={current_event.imageSquare.files[0].file.url}
                 layout={"fill"}
@@ -31,7 +31,7 @@ const Events = ({ events }) => {
                 className="rounded-md"
               />
             </div>
-            <div class="col-span-12 md:col-span-8">
+            <div className="col-span-12 md:col-span-8">
               <h2 className="mb-2 text-xl sm:text-3xl">
                 {current_event.name.title[0].plain_text}
               </h2>
@@ -53,14 +53,7 @@ const Events = ({ events }) => {
                 </p>
               </div>
               <p className="text-adaptive-white-4 line-clamp-3 lg:line-clamp-5">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-                ipsam asperiores officiis? Harum cupiditate beatae fuga rerum,
-                velit repudiandae labore ea maxime doloribus error consequuntur
-                qui dignissimos culpa id ipsa. Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Culpa ipsam asperiores officiis?
-                Harum cupiditate beatae fuga rerum, velit repudiandae labore ea
-                maxime doloribus error consequuntur qui dignissimos culpa id
-                ipsa.
+                {current_event.content.rich_text[0].plain_text}
               </p>
               <Button
                 className="mt-4"
@@ -162,6 +155,7 @@ export async function getStaticProps() {
     ...eventFilter,
   });
   const events = results.map((result) => result.properties);
+
   return {
     props: { events },
     revalidate: 300,

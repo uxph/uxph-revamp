@@ -1,13 +1,22 @@
 import NotionRichText from "../NotionRichText/NotionRichText";
 import Image from "next/image";
 const NotionBlock = ({ object }) => {
-  const objectHeading = object.heading_2?.text || object.heading_2?.rich_text;
   switch (object.type) {
     case "heading_2":
+      let objectHeading2 =
+        object.heading_2?.text || object.heading_2?.rich_text;
       return (
         <h2 className="pt-8 pb-2 text-xl sm:text-2xl lg:text-3xl">
-          {objectHeading[0].text.content}
+          {objectHeading2[0].text.content}
         </h2>
+      );
+    case "heading_3":
+      let objectHeading3 =
+        object.heading_3?.text || object.heading_3?.rich_text;
+      return (
+        <h3 className="pt-8 pb-2 text-xl sm:text-lg lg:text-xl">
+          {objectHeading3[0].text.content}
+        </h3>
       );
     case "image":
       return (
@@ -22,7 +31,16 @@ const NotionBlock = ({ object }) => {
           />
         </div>
       );
-
+    case "bulleted_list_item":
+      console.log(object.bulleted_list_item.rich_text);
+      return (
+        <li className="ml-2">
+          {" "}
+          {object.bulleted_list_item.rich_text.map((rt, index) => (
+            <NotionRichText text={rt} />
+          ))}
+        </li>
+      );
     case "paragraph":
       let paragraphs =
         object.paragraph.text || object.paragraph.rich_text || [];

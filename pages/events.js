@@ -17,12 +17,12 @@ const Events = ({ events }) => {
     <Layout>
       <SEO title="Events" />
       <Hero>
-        <div className="m container mx-auto w-full">
+        <div className="container mx-auto h-auto w-full">
           <h1 className="mb-6 text-center text-2xl sm:text-4xl">
             Latest Event
           </h1>
-          <div className="mx-auto grid h-72 w-full grid-flow-row grid-cols-12  gap-4 rounded-md p-2 md:grid-flow-col lg:w-4/5">
-            <div class="relative col-span-12 h-32 sm:h-72 md:col-span-4 md:h-full">
+          <div className="mx-auto grid h-auto w-full grid-flow-row grid-cols-12 place-items-center gap-4 rounded-md p-2 md:grid-flow-col lg:h-72 lg:w-4/5">
+            <div className="aspect-w-1 aspect-h-1 relative col-span-12 h-32 w-full sm:h-72 md:col-span-4 md:h-full">
               <Image
                 src={current_event.imageSquare.files[0].file.url}
                 layout={"fill"}
@@ -31,36 +31,29 @@ const Events = ({ events }) => {
                 className="rounded-md"
               />
             </div>
-            <div class="col-span-12 md:col-span-8">
+            <div className="col-span-12 md:col-span-8">
               <h2 className="mb-2 text-xl sm:text-3xl">
                 {current_event.name.title[0].plain_text}
               </h2>
-              <div className="mb-3 text-adaptive-white-4 ">
-                <p className="mr-1 inline-block text-xs sm:mr-3 md:mr-4 md:text-sm">
+              <div className="mb-3 flex items-center gap-3 text-adaptive-white-4">
+                <p className="mr-1 text-xs xl:text-sm">
                   {current_event.eventDate.date.end === null
                     ? new Date(
                         current_event.eventDate.date.start
                       ).toDateString()
                     : `${current_event.eventDate.date.start} - ${current_event.eventDate.date.end}`}
                 </p>
-                <p className="inline-block text-xs md:text-sm">•</p>
-                <p className="ml-1 mr-1 inline-block text-xs sm:ml-3 sm:mr-3 md:ml-4 md:mr-4 md:text-sm">
+                <p className="text-xs md:text-sm">•</p>
+                <p className="mx-1 text-xs xl:text-sm">
                   {current_event.time.rich_text[0].plain_text}
                 </p>
-                <p className="inline-block text-xs md:text-sm">•</p>
-                <p className="ml-0 inline-block text-xs sm:ml-3 sm:mr-3 md:ml-4 md:mr-4 md:text-sm">
+                <p className="text-xs md:text-sm">•</p>
+                <p className="mx-0 text-xs xl:text-sm">
                   {current_event.venue.rich_text[0].plain_text}
                 </p>
               </div>
               <p className="text-adaptive-white-4 line-clamp-3 lg:line-clamp-5">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-                ipsam asperiores officiis? Harum cupiditate beatae fuga rerum,
-                velit repudiandae labore ea maxime doloribus error consequuntur
-                qui dignissimos culpa id ipsa. Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Culpa ipsam asperiores officiis?
-                Harum cupiditate beatae fuga rerum, velit repudiandae labore ea
-                maxime doloribus error consequuntur qui dignissimos culpa id
-                ipsa.
+                {current_event.content.rich_text[0].plain_text}
               </p>
               <Button
                 className="mt-4"
@@ -162,6 +155,7 @@ export async function getStaticProps() {
     ...eventFilter,
   });
   const events = results.map((result) => result.properties);
+
   return {
     props: { events },
     revalidate: 300,
